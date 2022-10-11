@@ -1,5 +1,17 @@
 class Casino {
     // Write code here
+    timesPlayed = 0;
+    constructor(name) {
+        this.name = name;
+    }
+    playGame(betAmount) {
+        if(Math.random() <= 0.5) {
+            console.log(`${this.name} wins!`)
+        } else {
+            console.log(`Player wins ${betAmount * (this.timesPlayed + 1)}`)
+        }
+        this.timesPlayed++;
+    }
 };
 
 // TESTS
@@ -9,7 +21,7 @@ myCasino.playGame(5);
 myCasino.playGame(15);
 myCasino.playGame(25);
 myCasino.playGame(35);
-
+console.log(myCasino)
 // BONUS TESTS
 /*
 const myBonusCasino = new Casino("HackerU Bonus Casino", true);
